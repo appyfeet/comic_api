@@ -8,8 +8,6 @@ app = Flask(__name__)
 
 
 VOTED = {}
-@app.route("/vote/<int:id>/<string:vote>",methods=['GET'])
-def cast_vote(id,vote):
 
     if (vote != "good" and vote!= "bad"):
         raise ValueError("Invalid input")
