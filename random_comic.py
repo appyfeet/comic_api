@@ -9,11 +9,7 @@ app = Flask(__name__)
 
 VOTED = {}
 
-@app.route('/vote/<int:id>/<string:vote>')
-def comic_vote(id,vote):
-    # id = requests.args.get["id"]
-    # vote = requests.args.get["vote"]
-    if vote != "good" or vote!= "bad":
+    if (vote != "good" and vote!= "bad"):
         raise ValueError("Invalid input")
     if id in VOTED:
         if vote == "good":
